@@ -1,5 +1,5 @@
 # 🏗 Kubernetes Deployment Explained
-[kubernetes Deployment](image.png)
+![kubernetes Deployment](image.png)
 
 ## 📌 1. What is Each Component?  
 
