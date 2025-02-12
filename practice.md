@@ -202,3 +202,60 @@ kubectl delete -f .
 kubectl explain replicaset
 ```
 
+- Create a ReplicaSet using YAML:
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-replicaset
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+```
+
+- Create the ReplicaSet:
+
+```bash
+kubectl apply -f replicaset.yaml
+```
+
+- Verify ReplicaSet and Pods:
+
+```bash
+kubectl get replicaset
+kubectl get pods
+```
+
+- Describe the ReplicaSet:
+
+```bash
+kubectl describe replicaset nginx-replicaset
+```
+
+- Scale the ReplicaSet to 5 replicas:
+
+```bash
+kubectl scale replicaset nginx-replicaset --replicas=5
+```
+
+- Delete the ReplicaSet:
+
+```bash
+kubectl delete -f replicaset.yaml
+```
+
