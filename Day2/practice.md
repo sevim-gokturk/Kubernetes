@@ -8,15 +8,15 @@ https://www.killercoda.com/courses/kubernetes/playground
  
 - For worker node:
 ````bash
-# Python ve pip kurulumu
+# Python and pip installation
 wget https://bootstrap.pypa.io/get-pip.py
 python3 get-pip.py
 
-# Python paketlerinin kurulumu
+# Python packages installation 
 pip install pyopenssl --upgrade
 pip3 install ec2instanceconnectcli
 
-# mssh kurulumu
+# mssh installation
 sudo apt install -y mssh
 ````
 - master
