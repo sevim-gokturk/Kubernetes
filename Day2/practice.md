@@ -259,3 +259,62 @@ kubectl scale replicaset nginx-replicaset --replicas=5
 kubectl delete -f replicaset.yaml
 ```
 
+
+### Deployments
+
+- Get the documentation of `deployments` and its fields.
+
+```bash
+kubectl explain deployment
+```
+
+- Create a Deployment using YAML:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+```
+
+- Create the Deployment:
+
+```bash
+kubectl apply -f deployment.yaml
+```
+
+- Verify Deployment and Pods:
+
+```bash
+kubectl get deployment
+kubectl get pods
+```
+
+- Describe the Deployment:
+
+```bash
+kubectl describe deployment nginx-deployment
+```
+
+- Delete the Deployment:
+
+```bash
+kubectl delete -f deployment.yaml
+```
